@@ -1,13 +1,13 @@
-import React from 'react';
+import React,{useReducer} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import alertContext from './alertContext';
-import alertReducer from './alertReducer';
+import AlertReducer from './AlertReducer';
 import { SET_ALERT, REMOVE_ALERT } from '../types';
 
-const alertState = (props) => {
+const AlertState = (props) => {
     const initialState = [];
 
-		const [state, dispatch] = useReducer(alertReducer, initialState);
+		const [state, dispatch] = useReducer(AlertReducer, initialState);
 
 		// Set Alert
 		const setAlert = (msg, type, timeout = 5000) => {
@@ -32,4 +32,4 @@ const alertState = (props) => {
 		);
 };
 
-export default alertState;
+export default AlertState;
