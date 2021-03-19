@@ -1,10 +1,10 @@
 import React, { useReducer } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import personContext from './personContext';
-import personReducer from './personReducer';
+import PersonReducer from './PersonReducer';
 import { ADD_PERSON, DELETE_PERSON } from '../types';
 
-const personState = () => {
+const PersonState = (props) => {
 	const initialState = {
 		persons: [
 			{
@@ -42,7 +42,7 @@ const personState = () => {
 			},
 		],
 	};
-	const [state, dispatch] = useReducer(personReducer, initialState);
+	const [state, dispatch] = useReducer(PersonReducer, initialState);
 
 	//Add Person
 
@@ -69,4 +69,4 @@ const personState = () => {
 	);
 };
 
-export default personState;
+export default PersonState;
